@@ -1,0 +1,66 @@
+/* ============================================================
+   DiscountsScreen
+   ============================================================ */
+
+.discounts-screen {
+  padding: 16px;
+}
+
+.discounts-screen__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 16px;
+}
+
+/* --- Filter Chips --- */
+.discounts-screen__chips {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  margin-bottom: 16px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Hide scrollbar for cleaner look */
+.discounts-screen__chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex-shrink: 0;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--surface);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+}
+
+.chip--active {
+  background: var(--primary);
+  color: #fff;
+  border-color: var(--primary);
+}
+
+.chip:active {
+  transform: scale(0.95);
+}
+
+/* --- Discount List --- */
+.discounts-screen__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.discounts-screen__empty {
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  padding: 32px 0;
+}

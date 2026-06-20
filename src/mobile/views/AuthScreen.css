@@ -1,0 +1,117 @@
+/* ============================================================
+   AuthScreen — passcode lock screen
+   ============================================================ */
+
+.auth-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: var(--surface);
+  padding: 60px 24px 40px;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Unlock animation: scale + fade out */
+.auth-screen--unlocking {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+/* --- Brand --- */
+.auth-screen__brand {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.auth-screen__logo {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 12px;
+}
+
+.auth-screen__subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+}
+
+/* --- Passcode dots --- */
+.auth-screen__dots {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.auth-screen__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--border);
+  background: transparent;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.auth-screen__dot--filled {
+  background: var(--primary);
+  border-color: var(--primary);
+  transform: scale(1.15);
+}
+
+.auth-screen__dot--success {
+  background: var(--success);
+  border-color: var(--success);
+  animation: pulse 0.4s ease;
+}
+
+/* --- Keypad --- */
+.auth-screen__keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  width: 100%;
+  max-width: 280px;
+}
+
+.auth-screen__key {
+  width: 72px;
+  height: 72px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg);
+  transition: background var(--transition-fast), transform var(--transition-fast);
+  justify-self: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.auth-screen__key:active {
+  background: var(--primary-glow);
+  transform: scale(0.92);
+}
+
+.auth-screen__key--del {
+  color: var(--text-secondary);
+  background: transparent;
+}
+
+.auth-screen__key--del:active {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.auth-screen__key-spacer {
+  width: 72px;
+  height: 72px;
+  justify-self: center;
+}
