@@ -8,11 +8,42 @@
   position: relative;
 }
 
+.loyalty-screen__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
 .loyalty-screen__title {
   font-size: 1.25rem;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: 16px;
+  margin-bottom: 0; /* reset default margin to align with button */
+}
+
+.loyalty-screen__add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--primary);
+  color: #fff;
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(46, 196, 182, 0.2);
+  transition: transform var(--transition-fast), background var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.loyalty-screen__add-btn:hover {
+  background: var(--primary-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(11, 122, 117, 0.3);
+}
+
+.loyalty-screen__add-btn:active {
+  transform: translateY(0) scale(0.97);
 }
 
 .loyalty-screen__grid {
@@ -23,9 +54,9 @@
 
 /* Floating Action Button */
 .loyalty-screen__fab {
-  position: fixed;
-  bottom: 100px;
-  right: 40px;
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
   width: 56px;
   height: 56px;
   border-radius: var(--radius-full);
