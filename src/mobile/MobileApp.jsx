@@ -24,9 +24,10 @@ function MobileApp() {
     );
   }
 
-  // Map tab keys to view components
+  // Map tab keys to view components. Pass `setActiveTab` as `navigateTo` so
+  // child views can programmatically switch tabs (e.g. Home -> Discounts).
   const viewMap = {
-    home: <HomeScreen />,
+    home: <HomeScreen navigateTo={setActiveTab} />,
     cards: <CardsScreen />,
     loyalty: <LoyaltyScreen />,
     discounts: <DiscountsScreen />,

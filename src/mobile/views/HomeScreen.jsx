@@ -6,7 +6,7 @@ import './HomeScreen.css';
  * HomeScreen — the landing dashboard view.
  * Features: auto-scrolling promo carousel, quick actions, recent activity list.
  */
-function HomeScreen() {
+function HomeScreen({ navigateTo }) {
   const [activePromo, setActivePromo] = useState(0);
   const [showScanOverlay, setShowScanOverlay] = useState(false);
   const [scanSuccess, setScanSuccess] = useState(false);
@@ -90,7 +90,7 @@ function HomeScreen() {
           <span className="action-card__label">Scan Receipt</span>
         </div>
 
-        <div className="action-card" onClick={() => {}}>
+        <div className="action-card" onClick={() => navigateTo?.('discounts')}>
           <div className="action-card__icon action-card__icon--discounts">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="19" y1="5" x2="5" y2="19" />
